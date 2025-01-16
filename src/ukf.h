@@ -95,6 +95,11 @@ class UKF {
 
   // Sigma point spreading parameter
   double lambda_;
+  
+  void AugmentedSigmaPoints(Eigen::MatrixXd* Xsig_out);
+  Eigen::VectorXd motion_model(Eigen::VectorXd SigmaVal, double delta_t);
+  
+  Eigen::MatrixXd Xsig_out;
 };
 
 #endif  // UKF_H

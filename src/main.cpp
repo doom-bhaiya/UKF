@@ -4,9 +4,14 @@
 
 //#include "render/render.h"
 #include "highway.h"
+#include <X11/Xlib.h>
 
 int main(int argc, char** argv)
 {
+    if (!XInitThreads()) {
+        std::cerr << "Failed to initialize X11 thread safety." << std::endl;
+        return -1;
+    }	
 
 	pcl::visualization::PCLVisualizer::Ptr viewer(new pcl::visualization::PCLVisualizer("3D Viewer"));
 	viewer->setBackgroundColor(0, 0, 0);
