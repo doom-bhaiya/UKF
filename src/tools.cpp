@@ -140,3 +140,12 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr Tools::loadPcd(std::string file)
   return cloud;
 }
 
+
+
+
+
+
+
+
+
+
